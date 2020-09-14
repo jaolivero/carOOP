@@ -3,7 +3,10 @@ package com.carObject;
 public class Main {
 
     public static void main(String[] args) {
-        DebitCard debitCard = new DebitCard(1234, 5100);
-        BankAccount account = new BankAccount("joel", 6589, 5000, debitcard);
+        DebitCard checkingCard = new DebitCard(5510, 441000000);
+        BankAccount bankAccount = new BankAccount("Joel Olivero", 5001, 10000, checkingCard);
+        bankAccount.withdraw(500);
+        bankAccount.withdraw(300);
+        System.out.println(bankAccount.getBalance());
     }
 }

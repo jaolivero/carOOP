@@ -6,17 +6,42 @@ public class BankAccount {
     private String Name;
     private long acctNumber;
     private double balance;
-    private DebitCard debitCard;
+    public DebitCard debitCard;
 
-    public BankAccount (String Name, long acctNumber, double balance, DebitCard debitCard) {
-        this.Name = Name;
+    public BankAccount(String name, long acctNumber, double balance, DebitCard debitCard) {
+        this.Name = name;
         this.acctNumber = acctNumber;
         this.balance = balance;
         this.debitCard = debitCard;
     }
 
+
     public void deposit (double amount) {
         balance += amount;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public DebitCard getDebitCard() {
+        return debitCard;
+    }
+
+    public void setDebitCard(DebitCard debitCard) {
+        this.debitCard = debitCard;
     }
 
     public void withdraw (double amount) {
@@ -35,7 +60,7 @@ public class BankAccount {
 class Savings extends BankAccount {
     float interest = 4/100;
 
-    public Savings(String Name, long acctNumber, double balance) {
+    public Savings(String Name, long acctNumber, double balance, DebitCard debitCard) {
         super(Name, acctNumber, balance, debitCard);
     }
 
@@ -46,7 +71,7 @@ class Savings extends BankAccount {
 
 class CD extends BankAccount{
     boolean Locked;
-    public CD(String Name, long acctNumber, double balance) {
-        super(Name, acctNumber, balance);
+    public CD(String Name, long acctNumber, double balance, DebitCard debitCard) {
+        super(Name, acctNumber, balance, debitCard);
     }
 }
